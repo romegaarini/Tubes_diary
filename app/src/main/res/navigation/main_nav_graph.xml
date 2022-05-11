@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph.xml"
+    app:startDestination="@id/listDiaryFragment">
+
+    <fragment
+        android:id="@+id/listDiaryFragment"
+        android:name="org.d3if0031.diary.ui.ListDiaryFragment"
+        android:label="All Diary"
+        tools:layout="@layout/fragment_list_diary">
+        <action
+            android:id="@+id/action_listDiaryFragment_to_detailDiaryFragment"
+            app:destination="@id/detailDiaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createEditDiaryFragment"
+        android:name="org.d3if0031.diary.ui.AddEditDiaryFragment"
+        android:label=""
+        tools:layout="@layout/fragment_add_edit_diary">
+        <argument
+            android:name="id"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFavoriteDiaryFragment"
+        android:name="org.d3if0031.diary.ui.ListFavoriteDiaryFragment"
+        android:label="Favorites">
+        <action
+            android:id="@+id/action_listFavoriteDiaryFragment_to_detailDiaryFragment"
+            app:destination="@id/detailDiaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailDiaryFragment"
+        android:name="org.d3if0031.diary.ui.DetailDiaryFragment"
+        android:label="Diary">
+        <action
+            android:id="@+id/action_detailDiaryFragment_to_createEditDiaryFragment"
+            app:destination="@id/createEditDiaryFragment" />
+    </fragment>
+</navigation>
